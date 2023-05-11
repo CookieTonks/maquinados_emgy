@@ -15,6 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
+
         \App\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
@@ -63,5 +64,17 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+
+        'ordenes_middleware' => \App\Http\Middleware\ordenes_middleware::class,
+        'almacen_middleware' => \App\Http\Middleware\almacen_middleware::class,
+        'ingenieria_middleware' => \App\Http\Middleware\ingenieria_middleware::class,
+        'calidad_middleware' => \App\Http\Middleware\calidad_middleware::class,
+        'compras_middleware' => \App\Http\Middleware\compras_middleware::class,
+        'produccion_middleware' => \App\Http\Middleware\produccion_middleware::class,
+        'programador_middleware' => \App\Http\Middleware\programador_middleware::class,
+        'calidad_middleware' => \App\Http\Middleware\calidad_middleware::class,
+        'embarques_middleware' => \App\Http\Middleware\embarques_middleware::class,
+        'facturacion_middleware' => \App\Http\Middleware\facturacion_middleware::class,
     ];
 }
