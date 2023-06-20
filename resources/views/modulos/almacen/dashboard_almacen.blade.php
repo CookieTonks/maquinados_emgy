@@ -273,6 +273,7 @@
                                                             </th>
                                                             <th>OT</th>
                                                             <th>TIPO</th>
+                                                            <th>SOLICITUD</th>
                                                             <th>CANTIDAD</th>
                                                             <th>UM</th>
                                                             <th>CODIGO</th>
@@ -286,6 +287,7 @@
                                                         <tr>
                                                             @if($material->tipo === 'MATERIAL')
                                                             <td style="width: 200px;">
+
                                                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#recepcion_material" data-id="{{$material->id}}" data-ot="{{$material->ot}}" data-descripcion="{{$material->descripcion}}" data-cantidad="{{$material->cantidad_solicitada}}" data-cantidad_recibida="{{$material->cantidad_recibida}}" data-oc="{{$material->oc}}" data-proveedor="{{$material->proveedor}}">
                                                                     <i class="icon-check"> Entrada</i>
                                                                 </button>
@@ -299,6 +301,7 @@
                                                             @endif
                                                             <td>{{$material->ot}}</td>
                                                             <td>{{$material->tipo}}</td>
+                                                            <td>{{$material->solicitud}}</td>
                                                             <td>{{$material->cantidad_solicitada}}</td>
                                                             <td>{{$material->um}}</td>
                                                             <td>{{$material->codigo}}</td>
@@ -543,11 +546,11 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-6 form-group">
-                                                    <label for="Factura">Cantidad para comprar</label>
+                                                <div class="col-md-4 form-group">
+                                                    <label for="Factura">Cantidad</label>
                                                     <input class="form-control" id="cantidad_almacen" name="cantidad_almacen" placeholder="" value="" type="text">
                                                 </div>
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="Salida">Salida</label>
                                                     <select name="tipo_entrega" id="tipo_entrega" class="form-control">
                                                         <option value="-" class="form-control" name="-"> Selecciona</option>
@@ -555,6 +558,16 @@
                                                         </option>
                                                         <option value="produccion" class="form-control" name="produccion">
                                                             Producccion </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label for="Salida">solicitud</label>
+                                                    <select name="solicitud" id="solicitud" class="form-control">
+                                                        <option value="-" class="form-control" name="-"> Selecciona</option>
+                                                        <option value="abastecer" class="form-control" name="almacen"> Abastecer
+                                                        </option>
+                                                        <option value="resurtir" class="form-control" name="produccion">
+                                                            Resurtir </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -620,7 +633,7 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="tipo_recepcion">Recepcion</label>
                                                     <select name="tipo_recepcion" id="tipo_recepcion" class="form-control">
                                                         <option value="-" class="form-control" name="-"> Selecciona</option>
@@ -630,7 +643,7 @@
                                                         </option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="Salida">Salida</label>
                                                     <select name="tipo_entrega" id="tipo_entrega" class="form-control">
                                                         <option value="-" class="form-control" name="-"> Selecciona</option>

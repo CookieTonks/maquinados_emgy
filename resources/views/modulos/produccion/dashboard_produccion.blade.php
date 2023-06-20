@@ -178,7 +178,7 @@
                 <div class="hk-pg-wrapper">
 
                     <!-- Breadcrumb -->
-                    
+
                     <!-- /Breadcrumb -->
 
                     <!-- Container -->
@@ -209,13 +209,15 @@
                             <a href="{{route('ordenes_exports')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar reporte</a>
                         </div>
                         <!-- /Title -->
+
                         <div class="row">
                             <div class="col-xl-8">
                                 <section class="hk-sec-wrapper">
                                     <div class="row">
                                         <div class="col-sm">
-                                            <div class="table-wrap">
-                                                <table id="datable_1" class="table table-hover w-100 display pb-30">
+
+                                            <div class="table-responsive">
+                                                <table class="table table-sm table-hover mb-0">
                                                     <thead class="thead-primary">
                                                         <tr>
                                                             <th>
@@ -271,14 +273,18 @@
                                                                 <a target="_blank" href="{{route('order_pdf', $orden->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">remove_red_eye</i></a>
 
                                                                 <button type="button" class="btn  btn-sm btn-primary" data-toggle="modal" data-target="#asignacion_maquina" data-retrabajo="{{$orden->cant_retrabajo}}" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}" data-estatus="{{$orden->estatus}}">
-                                                                <i class="material-icons">camera_front</i>
+                                                                    Asignar
                                                                 </button>
                                                                 <button type="button" class="btn  btn-sm btn-secondary" data-toggle="modal" data-target="#reubicacion_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                <i class="material-icons">swap_horiz</i>
+                                                                    Reasignar
                                                                 </button>
 
                                                                 <button type="button" class="btn  btn-success btn-sm" data-toggle="modal" data-target="#salida_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                <i class="material-icons">done</i>
+                                                                    Liberar
+                                                                </button>
+
+                                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tareas_supervisor" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
+                                                                    Supervisor
                                                                 </button>
 
                                                             </th>
@@ -606,6 +612,57 @@
                             </div>
                         </div>
 
+                        <div class="modal fade" id="tareas_supervisor" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tareas supervisor</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{route('tareas_supervisor')}}" method="post">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-md-8 form-group">
+                                                    <label for="dibujo">OT</label>
+                                                    <input class="form-control" id="ot" name="ot" placeholder="" value="" type="text" readonly>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label for="dibujo">Cliente</label>
+                                                    <input class="form-control" id="cliente" name="cliente" placeholder="" value="" type="text" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-group">
+                                                    <label for="dibujo">Descripcion</label>
+                                                    <input class="form-control" id="descripcion" name="descripcion" placeholder="" value="" type="text" readonly>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-md-12 form-group">
+                                                    <label for="tipo_salida">Tipo de proceso</label>
+                                                    <select name="tarea_supervisor" class="form-control custom-select d-block w-100" id="tarea_supervisor">
+                                                        <option value="">Selecciona una opción...</option>
+                                                        <option>Inicio</option>
+                                                        <option>Pausa</option>
+                                                        <option>Finalizar</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-block btn-primary">Registrar</button>
+                                            <br>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
 
 
@@ -693,6 +750,30 @@
             })
         });
     </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#tareas_supervisor').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var ot = button.data('ot')
+                var cliente = button.data('cliente')
+                var descripcion = button.data('descripcion')
+
+
+                var modal = $(this)
+                modal.find('.modal-title').text('Validación de supervisor OT')
+                modal.find('#ot').val(ot)
+                modal.find('#cliente').val(cliente)
+                modal.find('#descripcion').val(descripcion)
+
+
+            })
+        });
+    </script>
+
+
+
 
 
     <!-- Javascripts -->

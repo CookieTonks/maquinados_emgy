@@ -26,7 +26,7 @@
     <thead>
       <tr>
         <td  scope="col" style="font-size:xx-small;"><img src="images/logo.png" width="100px">
-          <p>EMGY S.A DE C.V <br>
+          <p>EMGY METALMECANICA S.A DE C.V <br>
             MAQUINADOS Y PAILERIA INDUSTRIAL <br>
             Direccion, #000 D-7<br>
             Parque test Huinala, Apodaca, 66636<br>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models;
 use Carbon\Carbon;
+use PDF;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
@@ -80,8 +81,12 @@ class compras_controller extends Controller
             $registro_emgy->save();
         }
 
+        $materiales = models\materiales::where('oc', '=', $alta_oc->id)->get();
 
-        return back()->with('mensaje-success', '¡Alta de OC realizada con éxito!');
+        $pdf = PDF::loadView('modulos.compras.orden_pdf', compact('alta_oc', 'materiales'));
+
+        return $pdf->stream($alta_oc->id . '.pdf');
+
     }
     public function material_oc($id)
     {

@@ -214,11 +214,13 @@
                                                         </th>
                                                         <th>OT</th>
                                                         <th>Material</th>
-                                                        <th>Codigo</th>
-                                                        <th>Descripcion</th>
                                                         <th>Cantidad</th>
-                                                        <th>UM</th>
-
+                                                        <th>Tipo</th>
+                                                        <th>L</th>
+                                                        <th>A</th>
+                                                        <th>E</th>
+                                                        <th>Medidas</th>
+                                                        <th>Descripcion</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -229,11 +231,13 @@
                                                         </td>
                                                         <td>{{$material->ot}}</td>
                                                         <td>{{$material->material}}</td>
-                                                        <td>{{$material->codigo}}</td>
-                                                        <td>{{$material->descripcion}}</td>
                                                         <td>{{$material->cantidad_solicitada}}</td>
+                                                        <td>{{$material->tipo}}</td>
+                                                        <td>{{$material->c1}}</td>
+                                                        <td>{{$material->c2}}</td>
+                                                        <td>{{$material->c3}}</td>
                                                         <td>{{$material->um}}</td>
-
+                                                        <td>{{$material->descripcion}}</td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
@@ -242,10 +246,13 @@
                                                         <th></th>
                                                         <th>OT</th>
                                                         <th>Material</th>
-                                                        <th>Codigo</th>
-                                                        <th>Descripcion</th>
                                                         <th>Cantidad</th>
-                                                        <th>UM</th>
+                                                        <th>Tipo</th>
+                                                        <th>L</th>
+                                                        <th>A</th>
+                                                        <th>E/D</th>
+                                                        <th>Medidas</th>
+                                                        <th>Descripcion</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -287,16 +294,48 @@
                                             </div>
                                         </div>
 
+
+
                                         <div class="row stats-row">
-                                            <div class="col-md-6 form-group">
-                                                <label for="codigo">Codigo</label>
-                                                <input name="codigo" class="form-control" id="codigo" placeholder="" value="" type="text" required>
-                                            </div>
-                                            <div class="col-md-6 form-group">
-                                                <label for="um">UM</label>
-                                                <input name="um" class="form-control" id="um" placeholder="" value="" type="text" required>
+                                            <div class="col-md-12 form-group">
+                                                <label for="tipo">Tipo</label>
+                                                <select name="tipo" class="form-control" id="tipo" required>
+                                                    <option value="">Select a tipo</option>
+                                                    <option value="Cuadrado">Cuadrado</option>
+                                                    <option value="Redondo">Redondo</option>
+                                                </select>
                                             </div>
                                         </div>
+
+                                        <div class="row stats-row">
+                                            <div class="col-md-4 form-group">
+                                                <label for="caracteristica1" id="caracteristica1-label">L</label>
+                                                <input name="caracteristica1" class="form-control" id="caracteristica1" placeholder="" type="text" required>
+                                            </div>
+                                            <div class="col-md-4 form-group">
+                                                <label for="caracteristica2" id="caracteristica2-label">A</label>
+                                                <input name="caracteristica2" class="form-control" id="caracteristica2Container" placeholder="" type="text" required>
+                                            </div>
+                                            <div class="col-md-4 form-group">
+                                                <label for="caracteristica3" id="caracteristica3-label">X</label>
+                                                <input name="caracteristica3" class="form-control" id="caracteristica3" placeholder="" type="text" required>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row stats-row">
+                                            <div class="col-md-12 form-group">
+                                                <label for="medidas">Medidas</label>
+                                                <select name="medidas" class="form-control" id="medidas" required>
+                                                    <option value="">Selecciona una medida</option>
+                                                    <option value="Pulgadas">Pulgadas</option>
+                                                    <option value="Centimetros">Centimetros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
 
                                         <div class="row stats-row">
                                             <div class="col-md-12 form-group">
@@ -325,6 +364,32 @@
         </div>
     </div>
 
+
+    <script>
+        document.getElementById("tipo").addEventListener("change", function() {
+            var tipoValue = this.value;
+            var caracteristica1Label = document.getElementById("caracteristica1-label");
+            var caracteristica2Label = document.getElementById("caracteristica2-label");
+            var caracteristica3Label = document.getElementById("caracteristica3-label");
+
+            if (tipoValue === "Cuadrado") {
+                caracteristica1Label.textContent = "L";
+                caracteristica2Container.style.display = "block";
+
+                caracteristica2Label.style.display = "block";
+
+                caracteristica2Label.textContent = "A";
+                caracteristica3Label.textContent = "E";
+            } else if (tipoValue === "Redondo") {
+                caracteristica1Label.textContent = "L";
+                caracteristica2Label.style.display = "none";
+                caracteristica2Container.style.display = "none";
+
+
+                caracteristica3Label.textContent = "D";
+            }
+        });
+    </script>
 
 
 

@@ -32,14 +32,25 @@ class ordenes_controller extends Controller
         $orders = Models\orders::all();
         $clientes = models\cliente::orderBy('cliente', 'ASC')->get();
         $usuarios =  models\usuarios::orderBy('cliente', 'ASC')->get();
-        $vendedores =  models\user::where('role', '=', 'Vendedor')->get();
+        $vendedores =  models\user::where('role', '=', 'Vendedor')->orwhere('role', '=', 'Administrador')->get();
 
         return view('modulos.ordenes_trabajo.dashboard', compact('notificaciones', 'vendedores', 'usuarios', 'orders', 'clientes'));
     }
 
     public function buscador_ordenes()
     {
-        $orders = Models\orders::all();
+
+      
+
+        if(Auth::user()->role == "Administrador")
+        {
+            $orders = Models\orders::all(); 
+        }
+        else
+        {
+            $orders = Models\orders::where('vendedor', '=', Auth::user()->name)->get();
+            
+        }
         $notificaciones =  Models\notifications::all();
 
 
@@ -55,6 +66,10 @@ class ordenes_controller extends Controller
         $alta_orden->usuario = $request->usuario;
         $alta_orden->oc = $request->oc;
         $alta_orden->partida = $request->partida;
+
+
+        
+
         $alta_orden->cantidad = $request->cantidad;
         $alta_orden->descripcion = $request->descripcion;
         $alta_orden->moneda = $request->moneda;
@@ -77,6 +92,9 @@ class ordenes_controller extends Controller
         $array_hora = $request->hora;
         $array_minutos = $request->minutos;
         $alta_orden->save();
+
+        Storage::disk('public')->putFileAs('oc/' . $alta_orden->id, $request->file('archivo'), $alta_orden->id . '.pdf');
+
 
 
         $array_proceso = $request->Proceso;
@@ -358,6 +376,7 @@ if($alta_orden->prioridad == 'Urgente')
 
     public function material_register(Request $request)
     {
+
         $empresa = models\orders::where('id', '=', $request->ot)->first();
 
         $alta_material = new Models\materiales();
@@ -365,9 +384,11 @@ if($alta_orden->prioridad == 'Urgente')
         $alta_material->empresa = $empresa->empresa;
         $alta_material->material = $request->material;
         $alta_material->cantidad_solicitada = $request->cantidad;
+        $alta_material->c1 = $request->caracteristica1;
+        $alta_material->c2 = $request->caracteristica2;
+        $alta_material->c3 = $request->caracteristica3;
         $alta_material->descripcion = $request->descripcion;
-        $alta_material->codigo = $request->codigo;
-        $alta_material->um = $request->um;
+        $alta_material->um = $request->medidas;
         $alta_material->tipo = 'MATERIAL';
         $alta_material->estatus = 'P/ALMACEN';
         $alta_material->save();

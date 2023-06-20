@@ -27,9 +27,21 @@ class ingenieria_controller extends Controller
     public function buscador_ingenieria()
 
     {
+
+        if(Auth::user()->role == "Administrador")
+        {
+            $dibujos = Models\dibujos::all();
+        }
+        else
+        {
+            $dibujos = Models\dibujos::join('orders', 'orders.id', '=', 'dibujos.ot')
+            ->where('orders.vendedor', '=',  Auth::user()->name)
+            ->get();
+        }
+
+        
         $notificaciones =  Models\notifications::all();
 
-        $dibujos = Models\dibujos::all();
 
         return view('modulos.ingenieria.buscador_ingenieria', compact('dibujos', 'notificaciones'));
     }

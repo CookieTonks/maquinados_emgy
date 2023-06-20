@@ -178,6 +178,22 @@
                     <!-- Container -->
                     <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
                         <!-- Row -->
+                        @if (session('mensaje-error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{session('mensaje-error')}}
+                            <script type="text/javascript">
+                                $('.alert').alert()
+                            </script>
+                        </div>
+                        @elseif (session('mensaje-success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{session('mensaje-success')}}
+                            <script type="text/javascript">
+                                $('.alert').alert()
+                            </script>
+                        </div>
+                        @endif
+
 
                         <div class="row">
                             <div class="col-xl-12">
@@ -193,11 +209,11 @@
                                                         </div>
                                                         <div>
                                                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#alta_cliente">
-                                                            <i class="material-icons">add</i>
+                                                                <i class="material-icons">add</i>
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    <span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$clientes_conteo}}</span></span>
+                                                    <span class="d-block display-4 text-dark mb-5">{{$clientes_conteo}}</span>
 
                                                     <div>
                                                     </div>
@@ -212,12 +228,12 @@
                                                         </div>
                                                         <div>
                                                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#alta_usuario">
-                                                            <i class="material-icons">add</i>
+                                                                <i class="material-icons">add</i>
                                                             </button>
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$ordenes_finalizadas}}</span></span>
+                                                        <span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$usuarios_conteo}}</span></span>
                                                         <small class="d-block"></small>
                                                     </div>
                                                 </div>
@@ -231,12 +247,12 @@
                                                         </div>
                                                         <div>
                                                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#alta_proveedor">
-                                                            <i class="material-icons">add</i>
+                                                                <i class="material-icons">add</i>
                                                             </button>
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <span class="d-block display-4 text-dark mb-5">{{$ordenes_pendientes}}</span>
+                                                        <span class="d-block display-4 text-dark mb-5">{{$proveedor_conteo}}</span>
                                                         <small class="d-block"></small>
                                                     </div>
                                                 </div>
@@ -250,12 +266,12 @@
                                                         </div>
                                                         <div>
                                                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#alta_maquina">
-                                                            <i class="material-icons">add</i>
+                                                                <i class="material-icons">add</i>
                                                             </button>
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <span class="d-block display-4 text-dark mb-5">{{$maquinas}}</span>
+                                                        <span class="d-block display-4 text-dark mb-5">{{$maquinas_conteo}}</span>
                                                         <small class="d-block"></small>
                                                     </div>
                                                 </div>

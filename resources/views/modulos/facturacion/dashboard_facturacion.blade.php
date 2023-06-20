@@ -226,6 +226,7 @@
 
                                                             </th>
                                                             <th>OT</th>
+                                                            <th>OC</th>
                                                             <th>Cliente</th>
                                                             <th>Descripcion</th>
                                                             <th>Cant. OC</th>
@@ -239,10 +240,11 @@
                                                         <tr>
                                                             <td style="width: 200px;">
                                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#salida_factura" data-ot="{{$orden->id}}" data-cliente="{{$orden->cliente}}" data-oc="{{$orden->oc}}" data-partida="{{$orden->partida}}">
-                                                                    <i class="icon-plus"></i>
+                                                                    <i class="icon-plus">Registrar</i>
                                                                 </button>
                                                             </td>
-                                                            <td>{{$orden->id}}</td>
+                                                            <td><a target="_blank" href="public/storage/dibujos/{{$orden->id}}/{{$orden->id}}.pdf">{{$orden->id}}</a></td>
+                                                            <td><a target="_blank" href="public/storage/oc/{{$orden->id}}/{{$orden->id}}.pdf">{{$orden->oc}}</a></td>
                                                             <td>{{$orden->cliente}}</td>
                                                             <td>{{$orden->descripcion}}</td>
                                                             <td>{{$orden->cantidad}}</td>
@@ -253,6 +255,7 @@
                                                         <tr>
                                                             <th>+</th>
                                                             <th>OT</th>
+                                                            <th>OC</th>
                                                             <th>Cliente</th>
                                                             <th>Descripcion</th>
                                                             <th>Cant. OC</th>

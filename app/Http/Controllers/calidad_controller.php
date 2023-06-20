@@ -84,7 +84,6 @@ class calidad_controller extends Controller
                 $alta_material->empresa = $orden_datos->empresa;
                 $alta_material->estatus = 'P/ALMACEN';
                 $alta_material->save();
-
             }
 
             //Parcialidad liberada sin tratamiento externo
@@ -115,7 +114,9 @@ class calidad_controller extends Controller
 
             //Carga de PDF liberación
 
-            Storage::disk('public')->putFileAs('liberacion/' . $request->ot, $request->file('doc'), $request->ot . '.pdf');
+            if ($request->hasFile('doc')) {
+                Storage::disk('public')->putFileAs('liberacion/' . $request->ot, $request->file('doc'), $request->ot . '.pdf');
+            }
         }
 
         //Parcialidad para retrabajo

@@ -234,7 +234,9 @@
                                                         @foreach($ordenes as $orden)
                                                         <tr>
 
-                                                            <td> <a target="_blank" href="public/storage/dibujos/{{$orden->id}}/{{$orden->id}}.pdf">{{$orden->id}}</a></td>
+                                                            <td>
+                                                                <a target="_blank" href="public/storage/dibujos/{{$orden->id}}/{{$orden->id}}.pdf">{{$orden->id}}</a>
+                                                            </td>
                                                             <td>{{$orden->cliente}}</td>
                                                             <td>{{$orden->descripcion}}</td>
                                                             <td>{{$orden->cantidad}}</td>

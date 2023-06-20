@@ -215,7 +215,7 @@
                                                         @foreach($orders as $order)
                                                         <tr>
                                                             <td style="width: 300px;">
-                                                                <a href="{{route('order_pdf', $order->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">remove_red_eye</i></a>
+                                                                <a target="_blank" href="{{route('order_pdf', $order->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">remove_red_eye</i></a>
                                                                 <a href="{{route('edition_order', $order->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">create</i></a>
                                                                 <a href="{{route('material_order', $order->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">control_point_duplicate</i></a>
                                                                 <a href="{{route('ruta_ot', $order->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">timeline</i></a>
@@ -281,13 +281,17 @@
 
 
                                             <div class="row stats-row">
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="oc">OC</label>
                                                     <input name="oc" class="form-control" id="oc" placeholder="" value="" type="text" required>
                                                 </div>
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-4 form-group">
                                                     <label for="partida">Partida</label>
                                                     <input name="partida" class="form-control" id="partida" placeholder="" value="" type="number" required>
+                                                </div>
+                                                <div class="col-md-4 form-group">
+                                                    <label for="partida">Archivo OC</label>
+                                                    <input type="file" placeholder="Solo archivos en PDF" class="form-control" name="archivo" accept="application/pdf" id="archivo">
                                                 </div>
                                             </div>
                                             <div class="row stats-row">

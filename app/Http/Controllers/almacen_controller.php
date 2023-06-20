@@ -155,16 +155,15 @@ class almacen_controller extends Controller
         $registro_material->ot = $request->ot;
         $registro_material->descripcion = $request->descripcion;
         $registro_material->cantidad = $request->cantidad;
-        $registro_material->tipo_recepcion = 'STOCK ALMACEN';
         $registro_material->personal = $request->personal;
         $registro_material->fecha_recepcion = $date;
         $registro_material->save();
-
 
         $recepcion_material = models\materiales::where('id', '=', $request->id)->first();
         $recepcion_material->estatus = 'SOLICITADA';
         $recepcion_material->cantidad_almacen = $request->cantidad_almacen;
         $recepcion_material->fecha_almacen = $date;
+        $registro_material->solicitud = $request->solicitud;
         $recepcion_material->personal_almacen = Auth::user()->name;
         $recepcion_material->save();
 

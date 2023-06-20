@@ -187,132 +187,141 @@
                         </div>
                         <!-- /Title -->
 
-                            <form action="{{route('edicion_order', $order)}}" method="post">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <label for="cliente">Cliente</label>
-                                        <select name="cliente" class="form-control custom-select d-block w-100" id="cliente">
-                                            <option value="{{$order->cliente}}">{{$order->cliente}}</option>
-                                            @foreach ($clientes as $cliente)
-                                            <option value="{{$cliente->cliente}}">{{$cliente->cliente}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="usuario">Usuario</label>
-                                        <select name="usuario" class="form-control custom-select d-block w-100" id="usuario">
-                                            <option value="{{$order->usuario}}">{{$order->usuario}}</option>
-                                            @foreach ($usuarios as $usuario)
-                                            <option value="{{$usuario->nombre}}">{{$usuario->nombre}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                        <form action="{{route('edicion_order', $order)}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="cliente">Cliente</label>
+                                    <select name="cliente" class="form-control custom-select d-block w-100" id="cliente">
+                                        <option value="{{$order->cliente}}">{{$order->cliente}}</option>
+                                        @foreach ($clientes as $cliente)
+                                        <option value="{{$cliente->cliente}}">{{$cliente->cliente}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <label for="oc">OC</label>
-                                        <input name="oc" class="form-control" id="oc" placeholder="" value="{{$order->oc}}" type="text">
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="partida">Partida</label>
-                                        <input name="partida" class="form-control" id="partida" placeholder="" value="{{$order->partida}}" type="number">
-                                    </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="usuario">Usuario</label>
+                                    <select name="usuario" class="form-control custom-select d-block w-100" id="usuario">
+                                        <option value="{{$order->usuario}}">{{$order->usuario}}</option>
+                                        @foreach ($usuarios as $usuario)
+                                        <option value="{{$usuario->nombre}}">{{$usuario->nombre}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4 form-group">
-                                        <label for="cantidad">Cantidad</label>
-                                        <input name="cantidad" class="form-control" id="cantidad" placeholder="" value="{{$order->cantidad}}" type="number">
-                                    </div>
-                                    <div class="col-md-8 form-group">
-                                        <label for="descripcion">Descripcion</label>
-                                        <input name="descripcion" class="form-control" id="descripcion" placeholder="" value="{{$order->descripcion}}" type="text">
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="oc">OC</label>
+                                    <input name="oc" class="form-control" id="oc" placeholder="" value="{{$order->oc}}" type="text">
                                 </div>
-                                <hr />
-                                <hr />
-                                <div class="row">
-                                    <div class="col-md-12 form-group">
-                                        <label for="tratamiento">Tratamiento</label>
-                                        <input class="form-control" id="tratamiento" name="tratamiento" placeholder="" value="{{$order->tratamiento}}" type="text">
-                                    </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="partida">Partida</label>
+                                    <input name="partida" class="form-control" id="partida" placeholder="" value="{{$order->partida}}" type="number">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="cantidad">Cantidad</label>
+                                    <input name="cantidad" class="form-control" id="cantidad" placeholder="" value="{{$order->cantidad}}" type="number">
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    <label for="descripcion">Descripcion</label>
+                                    <input name="descripcion" class="form-control" id="descripcion" placeholder="" value="{{$order->descripcion}}" type="text">
+                                </div>
+                            </div>
+                            <hr />
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="tratamiento">Tratamiento</label>
+                                    <input class="form-control" id="tratamiento" name="tratamiento" placeholder="" value="{{$order->tratamiento}}" type="text">
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+                                    <label for="Monto">Monto</label>
+                                    <input class="form-control" id="monto" name="monto" placeholder="" value="{{$order->monto}}" type="number">
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label for="Moneda">Moneda</label>
+                                    <select name="moneda" class="form-control custom-select d-block w-100" id="moneda">
+                                        <option value="{{$order->moneda}}">{{$order->moneda}}</option>
+                                        <option value="USD">USD</option>
+                                        <option value="MXN">MXN</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label for="Vendedor">Vendedor</label>
+                                    <select name="vendedor" class="form-control custom-select d-block w-100" id="vendedor">
+                                        <option value="{{$order->vendedor}}">{{$order->vendedor}}</option>
+                                        @foreach ($vendedores as $vendedor)
+                                        <option value="{{$vendedor->name}}"> {{$vendedor->name}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="tipo_dibujo">Tipo dibujo</label>
+                                    <select class="form-control custom-select d-block w-100" name="tipo_dibujo" id="tipo_dibujo">
+                                        <option value="{{$order->tipo_dibujo}}">{{$order->tipo_dibujo}}</option>
+                                        <option>Cliente</option>
+                                        <option>Ingenieria</option>
+                                    </select>
                                 </div>
 
-                                <hr />
-                                <div class="row">
-                                    <div class="col-md-4 form-group">
-                                        <label for="Monto">Monto</label>
-                                        <input class="form-control" id="monto" name="monto" placeholder="" value="{{$order->monto}}" type="number">
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <label for="Moneda">Moneda</label>
-                                        <select name="moneda" class="form-control custom-select d-block w-100" id="moneda">
-                                            <option value="{{$order->moneda}}">{{$order->moneda}}</option>
-                                            <option value="USD">USD</option>
-                                            <option value="MXN">MXN</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <label for="Vendedor">Vendedor</label>
-                                        <select name="vendedor" class="form-control custom-select d-block w-100" id="vendedor">
-                                            <option value="{{$order->vendedor}}">{{$order->vendedor}}</option>
-                                            @foreach ($vendedores as $vendedor)
-                                            <option value="{{$vendedor->name}}"> {{$vendedor->name}} </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="Comentarios">Comentarios</label>
+                                    <input class="form-control" id="comentario_diseno" name="comentario_diseno" placeholder="" value="{{$order->comentario_diseno}}" type="text">
                                 </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <label for="tipo_dibujo">Tipo dibujo</label>
-                                        <select class="form-control custom-select d-block w-100" name="tipo_dibujo" id="tipo_dibujo">
-                                            <option value="{{$order->tipo_dibujo}}">{{$order->tipo_dibujo}}</option>
-                                            <option>Cliente</option>
-                                            <option>Ingenieria</option>
-                                        </select>
-                                    </div>
+                            </div>
 
-                                    <div class="col-md-6 form-group">
-                                        <label for="Comentarios">Comentarios</label>
-                                        <input class="form-control" id="comentario_diseno" name="comentario_diseno" placeholder="" value="{{$order->comentario_diseno}}" type="text">
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="Salidad de produccion">Salida de produccion</label>
+                                    <input class="form-control" id="salida_produccion" name="salida_produccion" placeholder="" value="{{$order->salida_produccion}}" type="date">
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <label for="Salidad de produccion">Salida de produccion</label>
-                                        <input class="form-control" id="salida_produccion" name="salida_produccion" placeholder="" value="{{$order->salida_produccion}}" type="date">
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="Salida de cliente">Salida de cliente</label>
-                                        <input class="form-control" id="salida_cliente" name="salida_cliente" placeholder="" value="{{$order->salida_cliente}}" type="date">
-                                    </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="Salida de cliente">Salida de cliente</label>
+                                    <input class="form-control" id="salida_cliente" name="salida_cliente" placeholder="" value="{{$order->salida_cliente}}" type="date">
                                 </div>
+                            </div>
 
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <label for="prioridad">Prioridad</label>
-                                        <select class="form-control custom-select d-block w-100" name="prioridad" id="prioridad">
-                                            <option value="{{$order->prioridad}}">{{$order->prioridad}}</option>
-                                            <option>Normal</option>
-                                            <option>Urgente</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="tipo_material">Material</label>
-                                        <select class="form-control custom-select d-block w-100" name="tipo_material" id="tipo_material">
-                                            <option value="{{$order->tipo_material}}">{{$order->tipo_material}}</option>
-                                            <option>EMGY</option>
-                                            <option>Cliente</option>
-                                        </select>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="prioridad">Prioridad</label>
+                                    <select class="form-control custom-select d-block w-100" name="prioridad" id="prioridad">
+                                        <option value="{{$order->prioridad}}">{{$order->prioridad}}</option>
+                                        <option>Normal</option>
+                                        <option>Urgente</option>
+                                    </select>
                                 </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="tipo_material">Material</label>
+                                    <select class="form-control custom-select d-block w-100" name="tipo_material" id="tipo_material">
+                                        <option value="{{$order->tipo_material}}">{{$order->tipo_material}}</option>
+                                        <option>EMGY</option>
+                                        <option>Cliente</option>
+                                    </select>
+                                </div>
+                            </div>
 
 
-                                <br>
-                                <button type="submit" class="btn btn-block btn-primary">Registrar</button>
-                            </form>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                <a href="{{route('dashboard_ordenes')}}" class="btn btn-block btn-success">Regresar</a>
+
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <button type="submit" class="btn btn-block btn-primary">Registrar</button>
+
+                                </div>
+                            </div>
+                        </form>
 
 
                     </div>

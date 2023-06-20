@@ -165,7 +165,7 @@
                 </nav>
             </div>
             <div class="page-content">
-               
+
                 <div class="hk-pg-wrapper">
 
                     <!-- Breadcrumb -->
@@ -211,7 +211,7 @@
 
                                 <div class="col-md-1 form-group">
                                     <label>Agregar</label>
-                                    <button class="btn btn-primary btn-block" type="submit"> 
+                                    <button class="btn btn-primary btn-block" type="submit">
                                         <i class="material-icons">add</i>
                                     </button>
                                 </div>
@@ -241,8 +241,10 @@
                                                         @foreach($ordenes as $orden)
                                                         <tr>
                                                             <td style="width: 200px;">
+                                                                <a target="_blank" href="{{route('order_pdf', $orden->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">remove_red_eye</i></a>
+
                                                                 <button type="button" class="btn  btn-sm btn-success" data-toggle="modal" data-target="#nueva_inspeccion" data-id="{{$orden->id}}" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-cantpro="{{$orden->cantidad}}">
-                                                                <i class="material-icons">add</i>
+                                                                    <i class="material-icons">add</i>
                                                                 </button>
                                                             </td>
                                                             <td> <a target="_blank" href="public/storage/dibujos/{{$orden->ot}}/{{$orden->ot}}.pdf">{{$orden->ot}}</a></td>
@@ -404,8 +406,8 @@
                                             <hr>
                                             <div class="row">
                                                 <div class="col-md-12 form-group">
-                                                    <label for="archivo">Archivo</label>
-                                                    <input required class="form-control" id="doc" name="doc" placeholder="" value="" type="file">
+                                                    <label for="archivo">Inspección final</label>
+                                                    <input  class="form-control" id="doc" name="doc" placeholder="" value="" type="file">
                                                 </div>
                                             </div>
                                             <hr>

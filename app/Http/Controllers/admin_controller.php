@@ -27,6 +27,12 @@ class admin_controller extends Controller
         $ordenes_pendientes = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->where('estatus', '<>', 'Finalizada')->count();
         $maquinas = models\maquinas::where('estatus', '=', 'ACTIVA')->count();
         $clientes_conteo = models\cliente::all()->count();
+        $usuarios_conteo = models\usuarios::all()->count();
+        $proveedor_conteo = models\proveedor::all()->count();
+        $maquinas_conteo = models\maquinas::all()->count();
+
+
+
 
         $datos_ordena = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->get();
         $datos_ordenf = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->where('tiempo_final', 'LIKE', '%' . $fecha . '%')->get();
@@ -43,7 +49,7 @@ class admin_controller extends Controller
 
         $ordenes_trabajadas = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->count();
 
-        return view('modulos.administrador.dashboard_administrador', compact('clientes_conteo','notificaciones', 'clientes', 'tecnicos', 'datos_maquina', 'fecha', 'datos_ordenf', 'datos_ordena', 'datos_ordenp', 'maquinas', 'ordenes_asignadas', 'ordenes_finalizadas', 'ordenes_pendientes', 'clientes_ordenes'));
+        return view('modulos.administrador.dashboard_administrador', compact('maquinas_conteo','proveedor_conteo','clientes_conteo', 'usuarios_conteo', 'notificaciones', 'clientes', 'tecnicos', 'datos_maquina', 'fecha', 'datos_ordenf', 'datos_ordena', 'datos_ordenp', 'maquinas', 'ordenes_asignadas', 'ordenes_finalizadas', 'ordenes_pendientes', 'clientes_ordenes'));
     }
     public function index(Request $request)
     {

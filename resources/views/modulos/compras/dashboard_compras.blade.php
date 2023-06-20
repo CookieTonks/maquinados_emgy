@@ -207,7 +207,7 @@
                         </div>
                         <!-- /Title -->
 
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{{route('alta_oc')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-2 form-group">

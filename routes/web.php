@@ -87,6 +87,7 @@ Route::get('/dashboard_produccion', [App\Http\Controllers\produccion_controller:
 Route::post('/asignacion_produccion/', [App\Http\Controllers\produccion_controller::class, 'asignacion_produccion'])->name('asignacion_produccion')->middleware('produccion_middleware');
 Route::post('/reubicacion_orden/', [App\Http\Controllers\produccion_controller::class, 'reubicacion_orden'])->name('reubicacion_orden')->middleware('produccion_middleware');
 Route::post('/salida_produccion/', [App\Http\Controllers\produccion_controller::class, 'salida_produccion'])->name('salida_produccion')->middleware('produccion_middleware');
+Route::post('/tareas_supervisor/', [App\Http\Controllers\produccion_controller::class, 'tareas_supervisor'])->name('tareas_supervisor')->middleware('produccion_middleware');
 
 
 Route::get('/dashboard_programador', [App\Http\Controllers\produccion_controller::class, 'dashboard_programador'])->name('dashboard_programador')->middleware('programador_middleware');
