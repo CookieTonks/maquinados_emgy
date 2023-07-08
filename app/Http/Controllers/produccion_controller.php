@@ -32,7 +32,7 @@ class produccion_controller extends Controller
             ->get();
 
 
-        $usuarios = models\user::where('role', '=', 'Administrador')->get();
+        $usuarios = models\user::where('role', '=', 'Programador')->get();
 
         $maquinas = models\maquinas::all();
 

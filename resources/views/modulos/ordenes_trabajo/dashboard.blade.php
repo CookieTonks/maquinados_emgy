@@ -278,22 +278,40 @@
                                             </div>
 
                                             <livewire:country-dropdown />
+                                            <div class="row stats-row">
+
+                                                <div class="col-md-12 mb-3">
+                                                    <label for="usuario" class="block text-sm font-medium text-gray-700">usuario</label>
+                                                    <select id="usuario" name="usuario" class="form-control" wire:model="usuario">
+                                                        <option>--- Selecciona un usuario ---</option>
+                                                        @foreach($usuarios as $usuario)
+                                                        <option value="{{$usuario->nombre}}">{{$usuario->nombre}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
 
 
                                             <div class="row stats-row">
-                                                <div class="col-md-4 form-group">
+                                                <div class="col-md-6 form-group">
                                                     <label for="oc">OC</label>
                                                     <input name="oc" class="form-control" id="oc" placeholder="" value="" type="text" required>
                                                 </div>
-                                                <div class="col-md-4 form-group">
+                                                <div class="col-md-6 form-group">
                                                     <label for="partida">Partida</label>
                                                     <input name="partida" class="form-control" id="partida" placeholder="" value="" type="number" required>
                                                 </div>
-                                                <div class="col-md-4 form-group">
+
+                                            </div>
+
+
+                                            <div class="row stats-row">
+                                                <div class="col-md-12 form-group">
                                                     <label for="partida">Archivo OC</label>
                                                     <input type="file" placeholder="Solo archivos en PDF" class="form-control" name="archivo" accept="application/pdf" id="archivo">
                                                 </div>
                                             </div>
+
                                             <div class="row stats-row">
                                                 <div class="col-md-4 form-group">
                                                     <label for="cantidad">Cantidad</label>

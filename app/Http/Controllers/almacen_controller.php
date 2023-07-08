@@ -77,13 +77,15 @@ class almacen_controller extends Controller
 
             $recepcion_material = models\materiales::where('id', '=', $request->id)->first();
             $cantidad_total = $recepcion_material->cantidad_recibida + $request->cantidad_recibida;
-
-            if ($cantidad_total === $recepcion_material->cantidad) {
-                $recepcion_material->estatus = 'RECIBIDA';
+            
+             $recepcion_material->estatus = 'RECIBIDA';
                 $recepcion_material->fecha_almacen = $date;
                 $recepcion_material->cantidad_recibida = $cantidad_total;
                 $recepcion_material->personal_almacen = Auth::user()->name;
                 $recepcion_material->save();
+
+            if ($cantidad_total === $recepcion_material->cantidad) {
+               
             } else {
                 return back()->with('mensaje-success', '¡La cantidad no es igual a la solicitada!');
             }
