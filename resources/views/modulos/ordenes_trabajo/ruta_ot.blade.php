@@ -387,7 +387,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <script src="http://flowchart.js.org/flowchart-latest.js"></script>
-    <script src="../plantilla/flowchart/release/flowchart.js"></script>
+    <script src="../../Plantilla/flowchart/release/flowchart.js"></script>
 
 
     <script>
