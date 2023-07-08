@@ -340,8 +340,8 @@ if($alta_orden->prioridad == 'Urgente')
         $production->prioridad = $request->prioridad;
         $production->save();
 
-        $evento_cliente = models\events::where('title', '=', 'EC: ' . $id)->delete();
-        $evento_produccion = models\events::where('title', '=', 'SP: ' . $id)->delete();
+        $evento_cliente = models\Events::where('title', '=', 'EC: ' . $id)->delete();
+        $evento_produccion = models\Events::where('title', '=', 'SP: ' . $id)->delete();
 
 
         $alta_evento = new models\Events();
