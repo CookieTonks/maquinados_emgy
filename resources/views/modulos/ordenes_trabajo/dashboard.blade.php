@@ -291,6 +291,7 @@
                                                 </div>
                                             </div>
 
+
                                             <div class="row stats-row">
                                                 <div class="col-md-6 form-group">
                                                     <label for="oc">OC</label>
@@ -313,7 +314,7 @@
 
                                             <div class="row stats-row">
                                                 <div class="col-md-4 form-group">
-                                                    <label for="cantidad">Salidas</label>
+                                                    <label for="cantidad">Cantidad</label>
                                                     <input name="cantidad" class="form-control" id="cantidad" placeholder="" value="" required type="number">
                                                 </div>
                                                 <div class="col-md-8 form-group">
