@@ -306,7 +306,7 @@ if($alta_orden->prioridad == 'Urgente')
         $order->descripcion = $request->descripcion;
         $order->tratamiento = $request->tratamiento;
         $order->monto = $request->monto;
-        $order->moneda = $request->modeda;
+        $order->moneda = $request->moneda;
         $order->vendedor = $request->vendedor;
         $order->tipo_dibujo = $request->tipo_dibujo;
         if ($order->tipo_dibujo  == 'Ingenieria') {
