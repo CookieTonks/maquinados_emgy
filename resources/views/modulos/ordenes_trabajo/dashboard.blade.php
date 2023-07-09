@@ -480,7 +480,7 @@
             var complex_html = [
                 '<br>',
                 '<div class="form-inline">',
-                '<select style="width:180px;" class="input-small form-control" id="proceso-selector" name="Proceso[]">',
+                '<select style="width:180px;" class="input-small form-control" name="Proceso[]">',
                 ' <option value="TORNEADO">TORNEADO</option>',
                 ' <option value="FRESADO">FRESADO</option>', ' <option value="RECTIFICADO">RECTIFICADO</option>',
                 '<option value="CNC">CNC</option>',
@@ -490,8 +490,9 @@
                 '<option value="PINTURA">PINTURA</option>',
                 '<option value="ENSAMBLE">ENSAMBLE</option>',
                 '</select> ',
-                '<input style="width:120px; margin-left:5px;" type="number" class="input-small form-control" id="hora"  name="hora[]" step="any" placeholder="(H)"> ',
-                '<input style="width:120px; margin-left:5px;" type="text" class="input-small form-control"  id="minuto" name="minutos[]"  placeholder="(M)"> ',
+                '<input style="width:90px; margin-left:5px;" type="number" class="input-small form-control" name="hora[]" step="any" placeholder="(H)"> ',
+                '<input style="width:90px; margin-left:5px;" type="text" class="input-small form-control" name="minutos[]" placeholder="(M)"> ',
+                '<button style="margin-left:3px" type="button" class="btn btn-danger btn-delete"><i class="material-icons">remove</i></a></button>',
                 '</div>',
             ].join('');
             return complex_html;
@@ -500,7 +501,6 @@
         $(document).ready(function() {
             var formCount = 0;
             $("#proceso_add").on('click', function() {
-
                 if (formCount < 10) {
                     var html = getHTMLString();
                     var element = $(html);
@@ -511,8 +511,15 @@
                     return;
                 }
             });
+
+            // Event handler for the delete button
+            $(document).on('click', '.btn-delete', function() {
+                $(this).parent().remove();
+                formCount--;
+            });
         });
     </script>
+
 
     <!-- Javascripts -->
     <script src="../../Plantilla/assets/plugins/jquery/jquery-3.4.1.min.js"></script>
