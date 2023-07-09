@@ -540,6 +540,16 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 form-group">
+                                                    <select name="empresa" wire:model="empresa" class="form-control custom-select d-block w-100">
+                                                        <option value=''>Selecciona una empresa</option>
+                                                        @foreach($empresas as $empresa)
+                                                        <option value='{{ $empresa->name}}'>{{ $empresa->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12 form-group">
                                                     <label for="nombre">Razon social</label>
                                                     <input name="nombre" class="form-control" id="nombre" placeholder="" value="" type="text">
                                                 </div>
@@ -553,6 +563,8 @@
                             </div>
                         </div>
 
+
+                      
                         <div class="modal fade" id="alta_usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -566,20 +578,20 @@
                                         <form action="{{route('alta_usuario')}}" method="post">
                                             @csrf
                                             <div class="row">
-                                                <div class="col-md-6 form-group">
-                                                    <label for="cliente">Cliente</label>
-                                                    <select name="cliente" class="form-control custom-select d-block w-100" id="cliente">
-                                                        <option value="">Selecciona una opcion...</option>
-                                                        @foreach ($clientes as $cliente)
-                                                        <option value="{{$cliente->cliente}}">{{$cliente->cliente}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6 form-group">
-                                                    <label for="usuario">Usuario</label>
-                                                    <input name="usuario" class="form-control" id="usuario" placeholder="" value="" type="text">
-                                                </div>
-                                            </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="cliente">Cliente</label>
+                                            <select name="cliente" class="form-control custom-select d-block w-100" id="cliente">
+                                                <option value="">Selecciona una opcion...</option>
+                                                @foreach ($clientes as $cliente)
+                                                <option value="{{$cliente->id}}">{{$cliente->cliente}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="usuario">Usuario</label>
+                                            <input name="usuario" class="form-control" id="usuario" placeholder="" value="" type="text">
+                                        </div>
+                                    </div>
                                             <br>
                                             <button type="submit" class="btn btn-block btn-primary">Registrar</button>
                                             <br>

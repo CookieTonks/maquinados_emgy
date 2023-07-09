@@ -21,6 +21,8 @@ class admin_controller extends Controller
         $date = Carbon::now();
         $fecha = $date->format('Y-m-d');
         $notificaciones =  Models\notifications::all();
+        $empresas = models\Empresas::all();
+
 
         $ordenes_asignadas = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->count();
         $ordenes_finalizadas = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->where('tiempo_final', 'LIKE', '%' . $fecha . '%')->count();
@@ -49,7 +51,7 @@ class admin_controller extends Controller
 
         $ordenes_trabajadas = models\production::where('tiempo_asignada', 'LIKE', '%' . $fecha . '%')->count();
 
-        return view('modulos.administrador.dashboard_administrador', compact('maquinas_conteo','proveedor_conteo','clientes_conteo', 'usuarios_conteo', 'notificaciones', 'clientes', 'tecnicos', 'datos_maquina', 'fecha', 'datos_ordenf', 'datos_ordena', 'datos_ordenp', 'maquinas', 'ordenes_asignadas', 'ordenes_finalizadas', 'ordenes_pendientes', 'clientes_ordenes'));
+        return view('modulos.administrador.dashboard_administrador', compact('empresas', 'maquinas_conteo','proveedor_conteo','clientes_conteo', 'usuarios_conteo', 'notificaciones', 'clientes', 'tecnicos', 'datos_maquina', 'fecha', 'datos_ordenf', 'datos_ordena', 'datos_ordenp', 'maquinas', 'ordenes_asignadas', 'ordenes_finalizadas', 'ordenes_pendientes', 'clientes_ordenes'));
     }
     public function index(Request $request)
     {
@@ -102,6 +104,8 @@ class admin_controller extends Controller
     public function alta_cliente(Request $request)
     {
         $cliente = new models\cliente();
+        $cliente->empresa = $request->empresa;
+
         $cliente->cliente = $request->nombre;
         $cliente->save();
         return back()->with('mensaje-success', '¡Nuevo cliente registrado con éxito!');
@@ -111,7 +115,7 @@ class admin_controller extends Controller
     {
         $usuario = new models\usuarios();
         $usuario->cliente = $request->cliente;
-        $usuario->nombre = $request->usuario;
+        $usuario->name = $request->usuario;
         $usuario->save();
         return back()->with('mensaje-success', '¡Nuevo usuario registrado con éxito!');
     }

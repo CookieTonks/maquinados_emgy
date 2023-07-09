@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class cliente extends Model
 {
     use HasFactory;
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresas::class, 'empresa', 'id');
+    }
+    
+    public function usuarios()
+    {
+        return $this->hasMany(Usuario::class, 'cliente', 'id');
+    }
+    
+    
 }

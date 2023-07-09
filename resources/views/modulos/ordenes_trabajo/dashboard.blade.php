@@ -28,6 +28,8 @@
     <link href="../../Plantilla/assets/css/dark_theme.css" rel="stylesheet">
     <link href="../../Plantilla/assets/css/custom.css" rel="stylesheet">
 
+    @livewireStyles
+    @livewireScripts
 
 
 </head>
@@ -266,30 +268,10 @@
                                         <form action="{{route('dashboard_ordenes_register')}}" method="post" enctype="multipart/form-data">
                                             @csrf
 
-                                            <div class="row stats-row">
-                                                <div class="col-md-12 form-group">
-                                                    <label for="empresa">Empresa</label>
-                                                    <select name="empresa" class="form-control custom-select d-block w-100" id="empresa" required>
-                                                        <option value="">Selecciona una opcion...</option>
-                                                        <option value="EMGY">EMGY</option>
-                                                        <option value="SERMIVIO ROMERO">SERVICIO ROMERO</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+
 
                                             <livewire:country-dropdown />
-                                            <div class="row stats-row">
 
-                                                <div class="col-md-12 mb-3">
-                                                    <label for="usuario" class="block text-sm font-medium text-gray-700">usuario</label>
-                                                    <select id="usuario" name="usuario" class="form-control" wire:model="usuario">
-                                                        <option>--- Selecciona un usuario ---</option>
-                                                        @foreach($usuarios as $usuario)
-                                                        <option value="{{$usuario->nombre}}">{{$usuario->nombre}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
 
 
                                             <div class="row stats-row">

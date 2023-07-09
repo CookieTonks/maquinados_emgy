@@ -1,30 +1,26 @@
 <?php
 
 namespace App\Http\Livewire;
-
-use App\Models\usuarios;
-use App\Models\cliente;
+use App\Models;
 use Livewire\Component;
 
 class CountryDropdown extends Component
 {
-    public $countries = [], $cities = [];
-    public $country, $city;
-
-    public function mount()
-    {
-        $this->countries = cliente::all();;
-        $this->cities = collect();
-    }
-
-    public function updatedCountry($value)
-    {
-        $this->cities = usuarios::where('cliente', $value)->get();
-        $this->city = $this->cities->first()->id ?? null;
-    }
+    public $empresa;
+    public $clientes = [];
+    public $cliente;
+    public $usuarios = [];
+    public $usuario;
 
     public function render()
     {
-        return view('livewire.country-dropdown');
+        if (!empty($this->empresa)) {
+            $this->clientes = Models\cliente::where('empresa', $this->empresa)->get();
+        }
+        if (!empty($this->cliente)) {
+            $this->usuarios = Models\usuarios::where('cliente', $this->cliente)->get();
+        }
+        return view('livewire.country-dropdown')
+            ->withEmpresas(Models\Empresas::orderBy('name')->get());
     }
 }
