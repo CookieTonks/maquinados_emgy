@@ -543,7 +543,7 @@
                                                     <select name="empresa" wire:model="empresa" class="form-control custom-select d-block w-100">
                                                         <option value=''>Selecciona una empresa</option>
                                                         @foreach($empresas as $empresa)
-                                                        <option value='{{ $empresa->name}}'>{{ $empresa->name }}</option>
+                                                        <option value='{{ $empresa->id}}'>{{ $empresa->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
