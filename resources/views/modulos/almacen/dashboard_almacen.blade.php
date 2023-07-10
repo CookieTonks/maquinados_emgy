@@ -200,6 +200,8 @@
                                                             <th>
                                                             </th>
                                                             <th>OT</th>
+                                                            <th>REQUISICION</th>
+
                                                             <th>TIPO</th>
                                                             <th>CANTIDAD</th>
                                                             <th>L</th>
@@ -230,6 +232,8 @@
                                                             @endif
 
                                                             <td>{{$material->ot}}</td>
+                                                            <td>{{$material->tipo}}</td>
+
                                                             <td>{{$material->tipo_material}}</td>
                                                             <td>{{$material->cantidad_solicitada}}</td>
                                                             <td>{{$material->c1}}</td>
@@ -247,6 +251,7 @@
                                                             <th>
                                                             </th>
                                                             <th>OT</th>
+                                                            <th>REQUISICION</th>
                                                             <th>TIPO</th>
                                                             <th>CANTIDAD</th>
                                                             <th>L</th>
@@ -281,6 +286,8 @@
                                                             <th>
                                                             </th>
                                                             <th>OT</th>
+                                                            <th>REQUISICION</th>
+
                                                             <th>TIPO</th>
                                                             <th>SOLICITUD</th>
                                                             <th>CANTIDAD</th>
@@ -312,6 +319,7 @@
                                                             </td>
                                                             @endif
                                                             <td>{{$material->ot}}</td>
+                                                            <td>{{$material->tipo}}</td>
                                                             <td>{{$material->tipo_material}}</td>
                                                             <td>{{$material->solicitud}}</td>
                                                             <td>{{$material->cantidad_solicitada}}</td>
@@ -331,6 +339,8 @@
                                                             <th>
                                                             </th>
                                                             <th>OT</th>
+                                                            <th>REQUISICION</th>
+
                                                             <th>TIPO</th>
                                                             <th>CANTIDAD</th>
                                                             <th>L</th>

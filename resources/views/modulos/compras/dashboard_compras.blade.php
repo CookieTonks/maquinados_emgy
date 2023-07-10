@@ -243,8 +243,12 @@
 
                                                         </th>
                                                         <th>OT</th>
+                                                        <th>REQUISICION</th>
                                                         <th>TIPO</th>
                                                         <th>MATERIAL</th>
+                                                        <th>L</th>
+                                                        <th>A</th>
+                                                        <th>E/D</th>
                                                         <th>DESCRIPCION</th>
                                                         <th>OC</th>
                                                         <th>PROVEEDOR</th>
@@ -262,8 +266,13 @@
                                                         </td>
                                                         <td>{{$material->ot}}</td>
                                                         <td>{{$material->tipo}}</td>
+
+                                                        <td>{{$material->tipo_material}}</td>
                                                         <td>{{$material->material}}</td>
                                                         <td>{{$material->descripcion}}</td>
+                                                        <td>{{$material->c1}}</td>
+                                                        <td>{{$material->c2}}</td>
+                                                        <td>{{$material->c3}}</td>
                                                         <td>{{$material->oc}}</td>
                                                         <td>{{$material->proveedor}}</td>
                                                         <td>{{$material->cantidad_solicitada}}</td>
@@ -273,10 +282,16 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th></th>
+                                                        <th>
+
+                                                        </th>
                                                         <th>OT</th>
+                                                        <th>REQUISICION</th>
                                                         <th>TIPO</th>
                                                         <th>MATERIAL</th>
+                                                        <th>L</th>
+                                                        <th>A</th>
+                                                        <th>E/D</th>
                                                         <th>DESCRIPCION</th>
                                                         <th>OC</th>
                                                         <th>PROVEEDOR</th>

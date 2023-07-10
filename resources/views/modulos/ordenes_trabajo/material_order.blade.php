@@ -229,7 +229,7 @@
                                                         <td>
                                                             <a href="{{route('material_delete', $material)}}" class="btn btn-danger btn-sm"><i class="icon-trash">Eliminar</i></a>
                                                         </td>
-                                                        <td>{{$material->ot}}</td>
+                                                         <td>{{$material->ot}}</td>
                                                         <td>{{$material->material}}</td>
                                                         <td>{{$material->cantidad_solicitada}}</td>
                                                         <td>{{$material->tipo_material}}</td>
