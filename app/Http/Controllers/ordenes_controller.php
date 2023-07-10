@@ -37,12 +37,12 @@ class ordenes_controller extends Controller
         // $usuarios = Cliente::with('empresa', 'usuarios')->get();
         // dd($usuarios);
 
-       
+
         $notificaciones =  Models\notifications::all();
         $orders = Models\orders::all();
         $clientes = models\cliente::orderBy('cliente', 'ASC')->get();
         $usuarios =  models\usuarios::orderBy('cliente', 'ASC')->get();
-        $vendedores =  models\user::where('role', '=', 'Vendedor')->orwhere('role', '=', 'Administrador')->get();
+        $vendedores =  models\user::where('role', '=', 'Vendedor')->orwhere('role', '=', 'Vendedor')->get();
 
         return view('modulos.ordenes_trabajo.dashboard', compact('notificaciones', 'vendedores', 'usuarios', 'orders', 'clientes'));
     }
@@ -99,7 +99,9 @@ class ordenes_controller extends Controller
         $array_minutos = $request->minutos;
         $alta_orden->save();
 
-        Storage::disk('public')->putFileAs('oc/' . $alta_orden->id, $request->file('archivo'), $alta_orden->id . '.pdf');
+        if ($request->hasFile('archivo')) {
+            Storage::disk('public')->putFileAs('oc/' . $alta_orden->id, $request->file('archivo'), $alta_orden->id . '.pdf');
+        }
 
 
 

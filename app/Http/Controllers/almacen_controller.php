@@ -50,6 +50,7 @@ class almacen_controller extends Controller
         return view('modulos.almacen.dashboard_almacen ', compact('proveedores', 'materiales_revision', 'materiales_recepcion', 'notificaciones'));
     }
 
+
     public function recepcion_material(Request $request)
     {
         $date = Carbon::now();
@@ -66,6 +67,9 @@ class almacen_controller extends Controller
         $registro_material->fecha_recepcion = $date;
         $registro_material->save();
 
+        $produccion = models\production::where('ot', '=', $request->ot)->first();
+
+
         if ($request->tipo_recepcion === 'PARCIAL') {
             $recepcion_material = models\materiales::where('id', '=', $request->id)->first();
             $recepcion_material->fecha_almacen = $date;
@@ -74,22 +78,28 @@ class almacen_controller extends Controller
             $recepcion_material->personal_almacen = Auth::user()->name;
             $recepcion_material->save();
         } elseif ($request->tipo_recepcion === 'FINAL') {
-
             $recepcion_material = models\materiales::where('id', '=', $request->id)->first();
-            $cantidad_total = $recepcion_material->cantidad_recibida + $request->cantidad_recibida;
-            
-             $recepcion_material->estatus = 'RECIBIDA';
-                $recepcion_material->fecha_almacen = $date;
-                $recepcion_material->cantidad_recibida = $cantidad_total;
-                $recepcion_material->personal_almacen = Auth::user()->name;
-                $recepcion_material->save();
+            $material_entrada = intval($request->cantidad_recibida);
+            $material_historial = intval($recepcion_material->cantidad_recibida);
+            $material_solicitado = intval($recepcion_material->cantidad_solicitada);
 
-            if ($cantidad_total === $recepcion_material->cantidad) {
-               
+            $cantidad_total = $material_historial + $material_entrada;
+
+            if ($registro_material->tipo_entrega === 'PRODUCCION' && $produccion->modalidad === 'SCRAP') {
+                $recepcion_material->estatus = 'RECIBIDA';
             } else {
-                return back()->with('mensaje-success', '¡La cantidad no es igual a la solicitada!');
+                if ($cantidad_total != $material_solicitado) {
+                    return back()->with('mensaje-error', 'Las cantidades no coinciden, no puede ser salida final!');
+                }
+                $recepcion_material->estatus = 'RECIBIDA';
             }
+
+            $recepcion_material->fecha_almacen = $date;
+            $recepcion_material->cantidad_recibida = $cantidad_total;
+            $recepcion_material->personal_almacen = Auth::user()->name;
+            $recepcion_material->save();
         }
+
 
         if ($registro_material->tipo_entrega === 'PRODUCCION') {
 
@@ -106,9 +116,7 @@ class almacen_controller extends Controller
             $ruta->save();
 
 
-            $produccion = models\production::where('ot', '=', $request->ot)->first();
-            if ($produccion->estatus === 'REGISTRADA') {
-
+            if ($produccion->estatus === 'REGISTRADA' || $produccion->estatus === 'E.CALIDAD') {
                 $produccion->estatus = "L.PRODUCCION";
                 $produccion->save();
             }

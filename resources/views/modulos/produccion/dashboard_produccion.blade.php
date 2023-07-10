@@ -241,17 +241,24 @@
                                                         @foreach($ordenes as $orden)
                                                         @if($orden->modalidad == 'RETRABAJO' || $orden->modalidad == 'SCRAP' )
                                                         <tr class="bg-danger text-white">
-                                                            <th>
-                                                                <a target="_blank" href="{{route('order_pdf', $orden->id)}}" class="btn btn-primary btn-sm"><i class="icon-eye"></i></a>
-                                                                <button type="button" class="btn  btn-sm btn-primary" data-toggle="modal" data-target="#asignacion_maquina" data-retrabajo="{{$orden->cant_retrabajo}}" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}" data-estatus="{{$orden->estatus}}">
-                                                                    <i class="icon-plus"></i>
+                                                        <th>
+                                                                <a target="_blank" href="{{route('order_pdf', $orden->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">remove_red_eye</i></a>
+                                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#asignacion_maquina" data-retrabajo="{{$orden->cant_retrabajo}}" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}" data-estatus="{{$orden->estatus}}">
+                                                                    <i class="material-icons">assignment</i>
                                                                 </button>
-                                                                <button type="button" class="btn  btn-sm btn-secondary" data-toggle="modal" data-target="#reubicacion_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                    <i class="icon-shuffle"></i>
+
+                                                                <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#reubicacion_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
+                                                                    <i class="material-icons">shuffle</i>
                                                                 </button>
-                                                                <button type="button" class="btn  btn-success btn-sm" data-toggle="modal" data-target="#salida_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                    <i class="icon-check"></i>
+
+                                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#salida_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
+                                                                    <i class="material-icons">check_circle</i>
                                                                 </button>
+
+                                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tareas_supervisor" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
+                                                                    <i class="material-icons">supervisor_account</i>
+                                                                </button>
+
                                                             </th>
                                                             <td> <a target="_blank" href="public/storage/dibujos/{{$orden->id}}/{{$orden->id}}.pdf">{{$orden->id}}</a></td>
                                                             <td>{{$orden->cliente}}</td>
@@ -271,20 +278,20 @@
                                                         <tr>
                                                             <th>
                                                                 <a target="_blank" href="{{route('order_pdf', $orden->id)}}" class="btn btn-primary btn-sm"><i class="material-icons">remove_red_eye</i></a>
-
-                                                                <button type="button" class="btn  btn-sm btn-primary" data-toggle="modal" data-target="#asignacion_maquina" data-retrabajo="{{$orden->cant_retrabajo}}" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}" data-estatus="{{$orden->estatus}}">
-                                                                    Asignar
-                                                                </button>
-                                                                <button type="button" class="btn  btn-sm btn-secondary" data-toggle="modal" data-target="#reubicacion_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                    Reasignar
+                                                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#asignacion_maquina" data-retrabajo="{{$orden->cant_retrabajo}}" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}" data-estatus="{{$orden->estatus}}">
+                                                                    <i class="material-icons">assignment</i>
                                                                 </button>
 
-                                                                <button type="button" class="btn  btn-success btn-sm" data-toggle="modal" data-target="#salida_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                    Liberar
+                                                                <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#reubicacion_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
+                                                                    <i class="material-icons">shuffle</i>
+                                                                </button>
+
+                                                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#salida_orden" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
+                                                                    <i class="material-icons">check_circle</i>
                                                                 </button>
 
                                                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tareas_supervisor" data-ot="{{$orden->ot}}" data-cliente="{{$orden->cliente}}" data-descripcion="{{$orden->descripcion}}">
-                                                                    Supervisor
+                                                                    <i class="material-icons">supervisor_account</i>
                                                                 </button>
 
                                                             </th>

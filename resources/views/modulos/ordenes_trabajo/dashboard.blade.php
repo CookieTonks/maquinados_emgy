@@ -398,7 +398,7 @@
                                             </div>
 
                                             <div class="row stats-row">
-                                                <div class="col-md-6 form-group">
+                                                <div class="col-md-12 form-group">
                                                     <label for="prioridad">Prioridad</label>
                                                     <select class="form-control custom-select d-block w-100" name="prioridad" id="prioridad">
                                                         <option value="">Selecciona una opcion...</option>
@@ -406,14 +406,7 @@
                                                         <option>Urgente</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 form-group">
-                                                    <label for="tipo_material">Material</label>
-                                                    <select class="form-control custom-select d-block w-100" name="tipo_material" id="tipo_material">
-                                                        <option value="">Selecciona una opcion...</option>
-                                                        <option>Emgy</option>
-                                                        <option>Cliente</option>
-                                                    </select>
-                                                </div>
+                                               
                                             </div>
 
 

@@ -546,21 +546,12 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-4 form-group">
+                                                <div class="col-md-6 form-group">
                                                     <label for="Factura">Cantidad</label>
                                                     <input class="form-control" id="cantidad_almacen" name="cantidad_almacen" placeholder="" value="" type="text">
                                                 </div>
-                                                <div class="col-md-4 form-group">
-                                                    <label for="Salida">Salida</label>
-                                                    <select name="tipo_entrega" id="tipo_entrega" class="form-control">
-                                                        <option value="-" class="form-control" name="-"> Selecciona</option>
-                                                        <option value="almacen" class="form-control" name="almacen"> Almacen
-                                                        </option>
-                                                        <option value="produccion" class="form-control" name="produccion">
-                                                            Producccion </option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4 form-group">
+                                            
+                                                <div class="col-md-6 form-group">
                                                     <label for="Salida">solicitud</label>
                                                     <select name="solicitud" id="solicitud" class="form-control">
                                                         <option value="-" class="form-control" name="-"> Selecciona</option>
@@ -633,7 +624,7 @@
                                             </div>
 
                                             <div class="row">
-                                                <div class="col-md-4 form-group">
+                                                <div class="col-md-6 form-group">
                                                     <label for="tipo_recepcion">Recepcion</label>
                                                     <select name="tipo_recepcion" id="tipo_recepcion" class="form-control">
                                                         <option value="-" class="form-control" name="-"> Selecciona</option>
@@ -643,7 +634,7 @@
                                                         </option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-4 form-group">
+                                                <div class="col-md-6 form-group">
                                                     <label for="Salida">Salida</label>
                                                     <select name="tipo_entrega" id="tipo_entrega" class="form-control">
                                                         <option value="-" class="form-control" name="-"> Selecciona</option>

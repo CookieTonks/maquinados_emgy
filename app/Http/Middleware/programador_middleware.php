@@ -16,23 +16,20 @@ class programador_middleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
             return redirect()->route('login');
         }
 
-        if (Auth::user()->role == 'Administrador') {
-            return $next($request);
+        $user = Auth::user();
+        $allowedRoles = ['Administrador', 'Supervisor producción', 'Programador'];
 
-            if (Auth::user()->role == 'Supervisor producción') {
-                return $next($request);
-            }
-            if (Auth::user()->role == 'Programador') {
-                return $next($request);
-            } else {
-                return redirect()->route('dashboard');
-            }
+        if (in_array($user->role, $allowedRoles)) {
+            return $next($request);
+        } else {
+            return redirect()->route('dashboard');
         }
     }
 }

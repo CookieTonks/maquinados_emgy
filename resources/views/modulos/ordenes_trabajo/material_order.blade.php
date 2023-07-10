@@ -266,7 +266,6 @@
                         </div>
                     </div>
 
-
                     <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -300,7 +299,7 @@
                                             <div class="col-md-12 form-group">
                                                 <label for="tipo">Tipo</label>
                                                 <select name="tipo" class="form-control" id="tipo" required>
-                                                    <option value="">Select a tipo</option>
+                                                   
                                                     <option value="Cuadrado">Cuadrado</option>
                                                     <option value="Redondo">Redondo</option>
                                                 </select>
@@ -354,14 +353,19 @@
 
                 </div>
             </div>
-            <div class="page-footer">
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="footer-text">2023 © EMGY</span>
-                    </div>
-                </div>
+
+
+
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="footer-text">2023 © EMGY</span>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 
 
