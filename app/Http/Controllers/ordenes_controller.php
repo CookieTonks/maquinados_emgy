@@ -384,6 +384,7 @@ class ordenes_controller extends Controller
         $alta_material->ot = $request->ot;
         $alta_material->empresa = $empresa->empresa;
         $alta_material->material = $request->material;
+        $alta_material->tipo_material	 = $request->tipo_material	;
         $alta_material->cantidad_solicitada = $request->cantidad;
         $alta_material->c1 = $request->caracteristica1;
         $alta_material->c2 = $request->caracteristica2;

@@ -218,7 +218,7 @@
                                                         <th>Tipo</th>
                                                         <th>L</th>
                                                         <th>A</th>
-                                                        <th>E</th>
+                                                        <th>E/D</th>
                                                         <th>Medidas</th>
                                                         <th>Descripcion</th>
                                                     </tr>
@@ -297,7 +297,7 @@
 
                                         <div class="row stats-row">
                                             <div class="col-md-12 form-group">
-                                                <label for="tipo">Tipo</label>
+                                                <label for="tipo_material">Tipo</label>
                                                 <select name="tipo" class="form-control" id="tipo" required>
                                                    
                                                     <option value="Cuadrado">Cuadrado</option>
