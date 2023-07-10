@@ -313,7 +313,7 @@
                                             </div>
                                             <div class="col-md-4 form-group">
                                                 <label for="caracteristica2" id="caracteristica2-label">A</label>
-                                                <input name="caracteristica2" class="form-control" id="caracteristica2Container" placeholder="" type="text" required>
+                                                <input name="caracteristica2" class="form-control" id="caracteristica2Container" placeholder="" type="text" >
                                             </div>
                                             <div class="col-md-4 form-group">
                                                 <label for="caracteristica3" id="caracteristica3-label">X</label>
