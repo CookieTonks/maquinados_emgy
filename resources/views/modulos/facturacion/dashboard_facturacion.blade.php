@@ -14,6 +14,7 @@
     <title>EMGY - Dashboard </title>
 
     <!-- Styles -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
@@ -164,23 +165,15 @@
                 </nav>
             </div>
             <div class="page-content">
-                <div class="page-info">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Módulo</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                        </ol>
-                    </nav>
 
-                </div>
-                <!-- Main Content -->
+
                 <div class="hk-pg-wrapper">
 
                     <!-- Breadcrumb -->
                     <nav class="hk-breadcrumb" aria-label="breadcrumb">
                         <ol class="breadcrumb breadcrumb-light bg-transparent">
                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Facturación</li>
+                            <li class="breadcrumb-item active" aria-current="page">Compras</li>
                         </ol>
                     </nav>
                     <!-- /Breadcrumb -->
@@ -275,7 +268,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Nueva: Carga de dibujo.</h5>
+                                        <h5 class="modal-title">Nueva: Carga de factura.</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
@@ -324,28 +317,9 @@
                     </div>
 
 
-
-                    <!-- /Container -->
-
-                    <!-- Footer -->
-                    <div class="hk-footer-wrap container-fluid">
-                        <footer class="footer">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <p class="d-inline-block">Siguenos</p>
-                                    <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
-                                    <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
-                                    <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
-                                </div>
-                            </div>
-                        </footer>
-                    </div>
-                    <!-- /Footer -->
-
                 </div>
-                <!-- /Main Content -->
+
+
             </div>
             <div class="page-footer">
                 <div class="row">
@@ -356,6 +330,8 @@
             </div>
         </div>
     </div>
+
+
 
 
 
@@ -381,7 +357,6 @@
             })
         });
     </script>
-
 
     <!-- Javascripts -->
     <script src="../../Plantilla/assets/plugins/jquery/jquery-3.4.1.min.js"></script>

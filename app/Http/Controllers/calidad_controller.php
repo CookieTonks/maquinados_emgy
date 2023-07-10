@@ -98,6 +98,7 @@ class calidad_controller extends Controller
                 $calidad_proceso->estatus = "P/EMBARQUES";
                 $calidad_proceso->save();
             }
+            
 
 
             //Carga de PDF liberación
