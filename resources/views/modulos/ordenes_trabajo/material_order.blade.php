@@ -232,7 +232,7 @@
                                                         <td>{{$material->ot}}</td>
                                                         <td>{{$material->material}}</td>
                                                         <td>{{$material->cantidad_solicitada}}</td>
-                                                        <td>{{$material->tipo}}</td>
+                                                        <td>{{$material->tipo_material}}</td>
                                                         <td>{{$material->c1}}</td>
                                                         <td>{{$material->c2}}</td>
                                                         <td>{{$material->c3}}</td>
