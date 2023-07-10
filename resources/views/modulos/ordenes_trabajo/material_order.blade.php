@@ -298,7 +298,7 @@
                                         <div class="row stats-row">
                                             <div class="col-md-12 form-group">
                                                 <label for="tipo_material">Tipo</label>
-                                                <select name="tipo" class="form-control" id="tipo" required>
+                                                <select name="tipo_material" class="form-control" id="tipo_material" required>
                                                    
                                                     <option value="Cuadrado">Cuadrado</option>
                                                     <option value="Redondo">Redondo</option>
