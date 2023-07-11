@@ -49,6 +49,8 @@ class calidad_controller extends Controller
 
         //Parcialidad liberada
 
+        //para salidas
+
         if ($request->tipo_inspeccion === 'LIBERADO') {
 
             $rutas_jets = models\emgy_rutas::where('ot', '=', $request->ot)->first();
