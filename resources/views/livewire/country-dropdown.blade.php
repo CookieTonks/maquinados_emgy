@@ -1,7 +1,7 @@
 <div>
     <div class="mb-8">
         <label class="inline-block w-32 font-bold">Empresa:</label>
-        <select name="empresa" wire:model="empresa" class="form-control custom-select d-block w-100">
+        <select name="empresa" wire:model="empresa" class="form-control custom-select d-block w-100" required>
             <option value=''>Seleccione una empresa</option>
             @foreach($empresas as $empresa)
             <option value={{ $empresa->id}}>{{ $empresa->name }}</option>
@@ -11,7 +11,7 @@
     @if(count($clientes) > 0)
     <div class="mb-8">
         <label class="inline-block w-32 font-bold">Cliente:</label>
-        <select name="cliente" wire:model="cliente" class="form-control custom-select d-block w-100">
+        <select name="cliente" wire:model="cliente" class="form-control custom-select d-block w-100" required>
             <option value=''>Seleccione un cliente</option>
             @foreach($clientes as $cliente)
             <option value={{ $cliente->id}}>{{ $cliente->cliente}}</option>
@@ -22,7 +22,7 @@
     @if(count($usuarios) > 0)
     <div class="mb-8">
         <label class="inline-block w-32 font-bold">Usuario:</label>
-        <select name="usuario" wire:model="usuario" class="form-control custom-select d-block w-100">
+        <select name="usuario" wire:model="usuario" class="form-control custom-select d-block w-100" required>
             <option value=''>Seleccione un usuario</option>
             @foreach($usuarios as $usuario)
             <option name="usuario" value={{ $usuario->id}}>{{ $usuario->name }}</option>
