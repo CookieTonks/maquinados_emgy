@@ -72,10 +72,6 @@ class ordenes_controller extends Controller
         $alta_orden->usuario = $request->usuario;
         $alta_orden->oc = $request->oc;
         $alta_orden->partida = $request->partida;
-
-
-
-
         $alta_orden->cantidad = $request->cantidad;
         $alta_orden->descripcion = $request->descripcion;
         $alta_orden->moneda = $request->moneda;
@@ -318,6 +314,11 @@ class ordenes_controller extends Controller
                 $alta_dibujo->cliente = $request->cliente;
                 $alta_dibujo->estatus = 'Pendiente';
                 $alta_dibujo->save();
+            } else {
+                $dibujo_ingenieria = models\dibujos::where('ot', '=', $id)->first();
+                $dibujo_ingenieria->cliente = $request->cliente;
+                $dibujo_ingenieria->descripcion = $request->descripcion;
+                $dibujo_ingenieria->save();
             }
         }
         $order->comentario_diseno = $request->comentario_diseno;
@@ -327,10 +328,9 @@ class ordenes_controller extends Controller
         $order->tipo_material = $request->tipo_material;
         $order->save();
 
-        $dibujo_ingenieria = models\dibujos::where('ot', '=', $id)->first();
-        $dibujo_ingenieria->cliente = $request->cliente;
-        $dibujo_ingenieria->descripcion = $request->descripcion;
-        $dibujo_ingenieria->save();
+
+
+
 
         $production = models\production::where('ot', '=', $id)->first();
         $production->cliente = $request->cliente;
@@ -384,7 +384,7 @@ class ordenes_controller extends Controller
         $alta_material->ot = $request->ot;
         $alta_material->empresa = $empresa->empresa;
         $alta_material->material = $request->material;
-        $alta_material->tipo_material	= $request->tipo_material;
+        $alta_material->tipo_material    = $request->tipo_material;
         $alta_material->cantidad_solicitada = $request->cantidad;
         $alta_material->c1 = $request->caracteristica1;
         $alta_material->c2 = $request->caracteristica2;
