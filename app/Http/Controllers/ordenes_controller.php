@@ -42,7 +42,7 @@ class ordenes_controller extends Controller
         $orders = Models\orders::all();
         $clientes = models\cliente::orderBy('cliente', 'ASC')->get();
         $usuarios =  models\usuarios::orderBy('cliente', 'ASC')->get();
-        $vendedores =  models\user::where('role', '=', 'Vendedor')->get();
+        $vendedores = models\user::where('email', 'like', '%ventas%')->get();
 
         return view('modulos.ordenes_trabajo.dashboard', compact('notificaciones', 'vendedores', 'usuarios', 'orders', 'clientes'));
     }
