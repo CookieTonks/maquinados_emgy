@@ -22,6 +22,11 @@
     <link href="../../Plantilla/assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
 
 
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
 
     <!-- Theme Styles -->
     <link href="../../Plantilla/assets/css/connect.min.css" rel="stylesheet">

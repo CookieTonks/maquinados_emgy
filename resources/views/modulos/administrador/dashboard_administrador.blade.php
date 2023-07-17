@@ -280,249 +280,252 @@
                                     </div>
                                     <hr class="hr" />
                                     <br>
-
-
-                                    <h6>Fecha hoy: {{$fecha}}</h6>
-
-                                    <div class="col-sm-12">
-                                        <div class="card-group hk-dash-type-2">
-                                            <div class="card card-sm">
-                                                <div class="card-body">
-                                                    <div class="d-flex justify-content-between mb-5">
-                                                        <div>
-                                                            <span class="d-block font-15 text-dark font-weight-500">Ordenes asignadas</span>
-                                                        </div>
-                                                        <div>
-                                                            <span class="text-primary font-14 font-weight-500"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <span class="d-block display-4 text-dark mb-5">{{$ordenes_asignadas}}</span>
-                                                        <small class="d-block"></small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="card card-sm">
-                                                <div class="card-body">
-                                                    <div class="d-flex justify-content-between mb-5">
-                                                        <div>
-                                                            <span class="d-block font-15 text-dark font-weight-500">Ordenes finalizadas</span>
-                                                        </div>
-                                                        <div>
-                                                            <span class="text-primary font-14 font-weight-500"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$ordenes_finalizadas}}</span></span>
-                                                        <small class="d-block"></small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="card card-sm">
-                                                <div class="card-body">
-                                                    <div class="d-flex justify-content-between mb-5">
-                                                        <div>
-                                                            <span class="d-block font-15 text-dark font-weight-500">Ordenes pendientes</span>
-                                                        </div>
-                                                        <div>
-                                                            <span class="text-warning font-14 font-weight-500"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <span class="d-block display-4 text-dark mb-5">{{$ordenes_pendientes}}</span>
-                                                        <small class="d-block"></small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="card card-sm">
-                                                <div class="card-body">
-                                                    <div class="d-flex justify-content-between mb-5">
-                                                        <div>
-                                                            <span class="d-block font-15 text-dark font-weight-500">Maquinas activas</span>
-                                                        </div>
-                                                        <div>
-                                                            <span class="text-danger font-14 font-weight-500"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <span class="d-block display-4 text-dark mb-5">{{$maquinas}}</span>
-                                                        <small class="d-block"></small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="hk-row">
-
-                                    <div class="col-lg-6">
-                                        <div class="card">
-                                            <div class="card-header card-header-action">
-                                                <h6>Ordenes asignadas</h6>
-                                                <table class="table table-sm table-hover mb-0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Ordenes de trabajo</th>
-                                                            <th>Cliente</th>
-                                                            <th>F.cliente</th>
-                                                            <th>Tecnico</th>
-                                                            <th>Tiempo trabajado</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach($datos_ordena as $datos_ordena)
-                                                        <tr>
-                                                            <td>{{$datos_ordena->ot}}</td>
-                                                            <td>{{$datos_ordena->cliente}}</td>
-                                                            <td>{{$datos_ordena->fecha_cliente}}</td>
-                                                            <td>{{$datos_ordena->persona_asignada}}</td>
-                                                            <td>{{$datos_ordena->tiempo_progreso}}</td>
-                                                        </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card">
-                                            <div class="card-header card-header-action">
-                                                <h6>Ordenes finalizadas</h6>
-                                                <table class="table table-sm table-hover mb-0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Ordenes de trabajo</th>
-                                                            <th>Cliente</th>
-                                                            <th>F.cliente</th>
-                                                            <th>Tecnico</th>
-                                                            <th>Tiempo trabajado</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach($datos_ordenf as $datos_ordenf)
-                                                        <tr>
-                                                            <td>{{$datos_ordenf->ot}}</td>
-                                                            <td>{{$datos_ordenf->cliente}}</td>
-                                                            <td>{{$datos_ordenf->fecha_cliente}}</td>
-                                                            <td>{{$datos_ordenf->persona_asignada}}</td>
-                                                            <td>{{$datos_ordenf->tiempo_progreso}}</td>
-                                                        </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="hk-row">
-                                    <div class="col-lg-6">
-                                        <div class="card">
-                                            <div class="card-header card-header-action">
-                                                <h6>Ordenes pendientes</h6>
-                                                <table class="table table-sm table-hover mb-0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Ordenes de trabajo</th>
-                                                            <th>Cliente</th>
-                                                            <th>F.cliente</th>
-                                                            <th>Tecnico</th>
-                                                            <th>Tiempo trabajado</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach($datos_ordenp as $datos_ordenp)
-                                                        <tr>
-                                                            <td>{{$datos_ordenp->ot}}</td>
-                                                            <td>{{$datos_ordenp->cliente}}</td>
-                                                            <td>{{$datos_ordenp->fecha_cliente}}</td>
-                                                            <td>{{$datos_ordenp->persona_asignada}}</td>
-                                                            <td>{{$datos_ordenp->tiempo_progreso}}</td>
-                                                        </tr>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card">
-                                            <div class="card-header card-header-action">
-                                                <h6>Maquinas activas</h6>
-                                                <table class="table table-sm table-hover mb-0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Codigo</th>
-                                                            <th>Carga</th>
-                                                            <th>Ultima</th>
-                                                            <th>Estatus</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach($datos_maquina as $datos_maquina)
-                                                        <td>{{$datos_maquina->codigo}}</td>
-                                                        <td>{{$datos_maquina->carga}}</td>
-                                                        <td>{{$datos_maquina->ultima_ot}}</td>
-                                                        <td>{{$datos_maquina->estatus}}</td>
-                                                        @endforeach
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="hk-row">
-                                    <div class="col-lg-12">
-                                        <div class="card">
-                                            <div class="card-header card-header-action">
-                                                <h6>Ordenes - Tecnicos</h6>
-                                                <div class="d-flex align-items-center card-action-wrap">
-                                                    <div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <canvas id="myChart" width="816" height="200" style="display: block; box-sizing: border-box; height: 204px; width: 408px;"></canvas>
-                                                <script>
-                                                    const ctx = document.getElementById('myChart');
-                                                    new Chart(ctx, {
-                                                        type: 'bar',
-                                                        data: {
-
-                                                            labels: [<?php foreach ($tecnicos as $tecnico) {
-                                                                            echo "'$tecnico->persona_asignada',";
-                                                                        } ?>],
-                                                            datasets: [{
-                                                                label: '#OT',
-                                                                data: [<?php foreach ($tecnicos as $tecnico) {
-                                                                            echo "'$tecnico->orden_trabajadas',";
-                                                                        } ?>],
-                                                                borderColor: '#264EA3',
-                                                                backgroundColor: '#264EA3',
-                                                                borderWidth: 1
-                                                            }]
-                                                        },
-                                                        options: {
-                                                            scales: {
-                                                                y: {
-                                                                    beginAtZero: true
-                                                                }
-                                                            }
-
-                                                        }
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                            <div class="card-group hk-dash-type-2">
+                                <div class="card card-sm">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <div>
+                                                <span class="d-block font-15 text-dark font-weight-500">Ordenes asignadas</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-primary font-14 font-weight-500"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="d-block display-4 text-dark mb-5">{{$ordenes_asignadas}}</span>
+                                            <small class="d-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-sm">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <div>
+                                                <span class="d-block font-15 text-dark font-weight-500">Ordenes finalizadas</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-primary font-14 font-weight-500"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="d-block display-4 text-dark mb-5"><span class="counter-anim">{{$ordenes_finalizadas}}</span></span>
+                                            <small class="d-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-sm">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <div>
+                                                <span class="d-block font-15 text-dark font-weight-500">Ordenes pendientes</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-warning font-14 font-weight-500"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="d-block display-4 text-dark mb-5">{{$ordenes_pendientes}}</span>
+                                            <small class="d-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card card-sm">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-5">
+                                            <div>
+                                                <span class="d-block font-15 text-dark font-weight-500">Maquinas activas</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-danger font-14 font-weight-500"></span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="d-block display-4 text-dark mb-5">{{$maquinas}}</span>
+                                            <small class="d-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br>
+
+                        <div class="hk-row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Ordenes asignadas</h6>
+                                        <table class="table table-sm table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ordenes de trabajo</th>
+                                                    <th>Cliente</th>
+                                                    <th>F.cliente</th>
+                                                    <th>Tecnico</th>
+                                                    <th>Tiempo trabajado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($datos_ordena as $datos_ordena)
+                                                <tr>
+                                                    <td>{{$datos_ordena->ot}}</td>
+                                                    <td>{{$datos_ordena->cliente}}</td>
+                                                    <td>{{$datos_ordena->fecha_cliente}}</td>
+                                                    <td>{{$datos_ordena->persona_asignada}}</td>
+                                                    <td>{{$datos_ordena->tiempo_progreso}}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Ordenes finalizadas</h6>
+                                        <table class="table table-sm table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ordenes de trabajo</th>
+                                                    <th>Cliente</th>
+                                                    <th>F.cliente</th>
+                                                    <th>Tecnico</th>
+                                                    <th>Tiempo trabajado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($datos_ordenf as $datos_ordenf)
+                                                <tr>
+                                                    <td>{{$datos_ordenf->ot}}</td>
+                                                    <td>{{$datos_ordenf->cliente}}</td>
+                                                    <td>{{$datos_ordenf->fecha_cliente}}</td>
+                                                    <td>{{$datos_ordenf->persona_asignada}}</td>
+                                                    <td>{{$datos_ordenf->tiempo_progreso}}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hk-row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Ordenes pendientes</h6>
+                                        <table class="table table-sm table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ordenes de trabajo</th>
+                                                    <th>Cliente</th>
+                                                    <th>F.cliente</th>
+                                                    <th>Tecnico</th>
+                                                    <th>Tiempo trabajado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($datos_ordenp as $datos_ordenp)
+                                                <tr>
+                                                    <td>{{$datos_ordenp->ot}}</td>
+                                                    <td>{{$datos_ordenp->cliente}}</td>
+                                                    <td>{{$datos_ordenp->fecha_cliente}}</td>
+                                                    <td>{{$datos_ordenp->persona_asignada}}</td>
+                                                    <td>{{$datos_ordenp->tiempo_progreso}}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Maquinas activas</h6>
+                                        <table class="table table-sm table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Codigo</th>
+                                                    <th>Carga</th>
+                                                    <th>Ultima</th>
+                                                    <th>Estatus</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($datos_maquina as $datos_maquina)
+                                                <tr>
+                                                    <td>{{$datos_maquina->codigo}}</td>
+                                                    <td>{{$datos_maquina->carga}}</td>
+                                                    <td>{{$datos_maquina->ultima_ot}}</td>
+                                                    <td>{{$datos_maquina->estatus}}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="hk-row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header card-header-action">
+                                        <h6>Ordenes - Tecnicos</h6>
+                                        <div class="d-flex align-items-center card-action-wrap">
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="myChart" width="816" height="200" style="display: block; box-sizing: border-box; height: 204px; width: 408px;"></canvas>
+                                        <script>
+                                            const ctx = document.getElementById('myChart');
+                                            new Chart(ctx, {
+                                                type: 'bar',
+                                                data: {
+
+                                                    labels: [<?php foreach ($tecnicos as $tecnico) {
+                                                                    echo "'$tecnico->persona_asignada',";
+                                                                } ?>],
+                                                    datasets: [{
+                                                        label: '#OT',
+                                                        data: [<?php foreach ($tecnicos as $tecnico) {
+                                                                    echo "'$tecnico->orden_trabajadas',";
+                                                                } ?>],
+                                                        borderColor: '#264EA3',
+                                                        backgroundColor: '#264EA3',
+                                                        borderWidth: 1
+                                                    }]
+                                                },
+                                                options: {
+                                                    scales: {
+                                                        y: {
+                                                            beginAtZero: true
+                                                        }
+                                                    }
+
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- /Row -->
@@ -564,7 +567,7 @@
                         </div>
 
 
-                      
+
                         <div class="modal fade" id="alta_usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -578,20 +581,20 @@
                                         <form action="{{route('alta_usuario')}}" method="post">
                                             @csrf
                                             <div class="row">
-                                        <div class="col-md-6 form-group">
-                                            <label for="cliente">Cliente</label>
-                                            <select name="cliente" class="form-control custom-select d-block w-100" id="cliente">
-                                                <option value="">Selecciona una opcion...</option>
-                                                @foreach ($clientes as $cliente)
-                                                <option value="{{$cliente->id}}">{{$cliente->cliente}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 form-group">
-                                            <label for="usuario">Usuario</label>
-                                            <input name="usuario" class="form-control" id="usuario" placeholder="" value="" type="text">
-                                        </div>
-                                    </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="cliente">Cliente</label>
+                                                    <select name="cliente" class="form-control custom-select d-block w-100" id="cliente">
+                                                        <option value="">Selecciona una opcion...</option>
+                                                        @foreach ($clientes as $cliente)
+                                                        <option value="{{$cliente->id}}">{{$cliente->cliente}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="usuario">Usuario</label>
+                                                    <input name="usuario" class="form-control" id="usuario" placeholder="" value="" type="text">
+                                                </div>
+                                            </div>
                                             <br>
                                             <button type="submit" class="btn btn-block btn-primary">Registrar</button>
                                             <br>

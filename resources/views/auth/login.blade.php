@@ -31,7 +31,14 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <![endif]-->
+
+
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
 </head>
 
 <body class="auth-page sign-in">
@@ -41,13 +48,20 @@
             <span class='sr-only'>Loading...</span>
         </div>
     </div>
+
     <div class="connect-container align-content-stretch d-flex flex-wrap">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-5">
+            <div class="row justify-content-center">
+
+                <!-- Agregamos la clase justify-content-center para centrar los elementos -->
+                <div class="col-lg-12">
                     <div class="auth-form">
+                        <div class="col text-center">
+                            <img src="images/logo.png" alt="Logo">
+                        </div>
                         <div class="row">
-                            <div class="col">
+
+                            <div class="col text-center"> <!-- Agregamos la clase text-center para centrar el formulario -->
                                 <div class="logo-box"><a href="#" class="logo-text">Inicia sesión</a></div>
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
@@ -70,10 +84,12 @@
                         </div>
                     </div>
                 </div>
-                //Insertar logo
-                <div class="col-lg-6 d-none d-lg-block d-xl-block">
-                    <div class=""></div>
-                </div>
+                <!-- Insertar logo -->
+                
+
+
+
+
             </div>
         </div>
     </div>
