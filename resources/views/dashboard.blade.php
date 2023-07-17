@@ -32,6 +32,14 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+
+    <style>
+        .bg-primary1 {
+            background-color: green;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -88,7 +96,7 @@
                             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                         </ol>
                     </nav>
-                   
+
                 </div>
                 <div class="main-wrapper">
                     <!-- Breadcrumb -->
@@ -109,7 +117,7 @@
 
 
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Órdenes de trabajo</h5>
@@ -124,7 +132,7 @@
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Ingenieria</h5>
@@ -139,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Almacén</h5>
@@ -158,7 +166,7 @@
                         </div>
                         <div class="row stats-row">
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Compras</h5>
@@ -173,7 +181,7 @@
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Producción</h5>
@@ -188,7 +196,7 @@
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Tecnico</h5>
@@ -208,7 +216,7 @@
 
                         <div class="row stats-row">
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Calidad</h5>
@@ -223,7 +231,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Embarques</h5>
@@ -238,7 +246,7 @@
                             </div>
 
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Facturación</h5>
@@ -256,7 +264,7 @@
                             </div>
 
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-30">
-                                <div class="card text-white bg-primary">
+                                <div class="card text-white bg-primary1">
                                     <div class="card-header">Módulo</div>
                                     <div class="card-body">
                                         <h5 class="card-title text-white">Administrador</h5>
